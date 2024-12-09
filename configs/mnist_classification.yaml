@@ -1,0 +1,45 @@
+# This configuration is based on the parameters from Dmitry Krotov's paper
+# "Dense Associative Memory for Pattern Recognition" and its numpy implementation.
+# The original implementation can be found at:
+# https://github.com/DimaKrotov/Dense_Associative_Memory/blob/master/Dense_Associative_Memory_training.ipynb
+
+# Experiment configuration
+experiment_name: mnist_classification
+experiment_description: Classification task on MNIST dataset
+
+# Task configuration
+task: classification
+dataset_root: ../datasets/MNIST
+
+# Data processing
+threshold: 0.8
+precision: 1.0e-30
+
+# Network configuration
+n_memories: 100
+initial_memories_mu: -0.3
+initial_memories_sigma: 0.3
+interaction_vertex: 20
+initial_temperature: 540.0
+final_temperature: 540.0
+temperature_ramp: 200
+neuron_mask_start_index: 784
+neuron_mask_end_index: 794
+dimension: 794  # 28*28 + 10
+image_shape: [28, 28]
+neuron_batch_size: null
+
+# Training configuration
+item_batch_size: 128
+eval_interval: 5
+max_epochs: 300
+initial_lr: 4.0e-2
+lr_decay: 0.998
+momentum: 0.6
+error_power: 30
+
+# Display configuration
+num_display_memories: 100
+
+# Debug configuration
+debug: false

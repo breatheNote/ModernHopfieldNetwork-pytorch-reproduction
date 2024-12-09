@@ -1,0 +1,43 @@
+# These parameters match those used in the official Hopfield-Network-PyTorch repository
+# Source: https://github.com/hmcalister/Hopfield-Network-PyTorch
+
+# Experiment configuration
+experiment_name: mnist_classification_no_tuning
+experiment_description: Classification task on MNIST dataset without tuning
+
+# Task configuration
+task: classification
+dataset_root: ../datasets/MNIST
+
+# Data processing
+threshold: 0.8
+precision: 1.0e-30
+
+# Network configuration
+n_memories: 256
+initial_memories_mu: -0.3
+initial_memories_sigma: 0.3
+interaction_vertex: 10
+initial_temperature: 1.1
+final_temperature: 1.1
+temperature_ramp: 200
+neuron_mask_start_index: 784
+neuron_mask_end_index: 794
+dimension: 794
+image_shape: [28, 28]
+neuron_batch_size: null
+
+# Training configuration
+item_batch_size: 128
+eval_interval: 5
+max_epochs: 100
+initial_lr: 1.0e-1
+lr_decay: 0.999
+momentum: 0.6
+error_power: 1
+
+# Display configuration
+num_display_memories: 25
+
+# Debug configuration
+debug: false 
